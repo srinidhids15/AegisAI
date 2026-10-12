@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0A0A0B;
+  --color-surface: #141416;
+  --color-border-custom: #2A2A2E;
+  --color-primary-custom: #FF9900;
+  --color-secondary-custom: #FF5500;
+  --color-text-primary: #F0F0F2;
+  --color-text-secondary: #88888C;
+
+  --radius-2xl: 1rem;
+  --transition-executive: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer utilities {
+  .animate-shimmer {
+    animation: shimmer 2s infinite linear;
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    background-color: rgba(30, 39, 51, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border-custom);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .card-premium {
+    background-color: rgba(30, 39, 51, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border-custom);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-radius: var(--radius-2xl);
+    padding: 1.5rem;
+    transition: border-color 0.3s var(--transition-executive), box-shadow 0.3s var(--transition-executive);
+  }
+
+  .card-premium:hover {
+    border-color: rgba(75, 184, 255, 0.4);
+    box-shadow: 0 0 20px rgba(75, 184, 255, 0.05);
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary-custom);
+    color: var(--color-background);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s var(--transition-executive);
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    filter: brightness(1.1);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--color-border-custom);
+    color: var(--color-text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s var(--transition-executive);
+    cursor: pointer;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-surface);
+  }
+
+  .btn-outline:active {
+    transform: scale(0.95);
+  }
+}

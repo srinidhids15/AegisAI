@@ -1,0 +1,26 @@
+[
+    {
+        "id": "T1190",
+        "name": "Exploit Public-Facing Application",
+        "tactic": "Initial Access",
+        "description": "Adversaries may attempt to exploit a weakness in an Internet-facing host or application to get initial access."
+    },
+    {
+        "id": "T1059",
+        "name": "Command and Scripting Interpreter",
+        "tactic": "Execution",
+        "description": "Adversaries may abuse command and script interpreters to execute commands, scripts, or binaries."
+    },
+    {
+        "id": "T1552",
+        "name": "Unsecured Credentials",
+        "tactic": "Credential Access",
+        "description": "Adversaries may search for and use unsecured credentials to gain access to accounts."
+    },
+    {
+        "id": "T1213",
+        "name": "Data from Information Repositories",
+        "tactic": "Collection",
+        "description": "Adversaries may attempt to find and extract information from internal information repositories."
+    }
+]
