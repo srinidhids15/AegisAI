@@ -26,7 +26,7 @@ const Ingest: React.FC = () => {
       setRepoUrl('');
       setProjectName('');
     } catch (err: any) {
-      setResult({ type: 'error', message: err.response?.data?.error || 'Ingestion failed. Ensure Git URL is accessible.' });
+      setResult({ type: 'error', message: err.response?.data?.detail || 'Ingestion failed. Ensure Git URL is accessible.' });
     } finally {
       setIsIngesting(false);
     }
@@ -44,7 +44,7 @@ const Ingest: React.FC = () => {
       setFile(null);
       setProjectName('');
     } catch (err: any) {
-      setResult({ type: 'error', message: err.response?.data?.error || 'ZIP Processing failed. Ensure file is not corrupt.' });
+      setResult({ type: 'error', message: err.response?.data?.detail || 'ZIP Processing failed. Ensure file is not corrupt.' });
     } finally {
       setIsIngesting(false);
     }

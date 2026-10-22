@@ -24,7 +24,9 @@ COPY . .
 # Security Hardening
 RUN adduser --disabled-password --gecos "" appuser && \
     mkdir -p /app/data && \
-    chown -R appuser:appuser /app
+    mkdir -p /tmp/aegisai_projects && \
+    chown -R appuser:appuser /app && \
+    chown -R appuser:appuser /tmp/aegisai_projects
 
 ENV PATH=/home/appuser/.local/bin:$PATH
 USER appuser
